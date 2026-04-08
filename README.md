@@ -30,8 +30,8 @@ mysql --version        # MySQL/MariaDB
 
 ### 1. Clonage du projet
 ```bash
-git clone https://github.com/Asmae-gif/Lisi.git
-cd Lisi
+git clone https://github.com/khayoubIsmail/LISI.git
+cd LISI
 ```
 
 ### 2. Configuration de la base de données
