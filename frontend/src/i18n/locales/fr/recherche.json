@@ -1,4 +1,39 @@
 {
+  "titre": "Nos Axes de Recherche",
+  "texte_intro": "Découvrez nos domaines d'expertise et nos axes de recherche stratégiques au Laboratoire d'Informatique et de Systèmes Intelligents.",
+  "strategic": {
+    "title": "Approche Stratégique",
+    "subtitle": "Notre méthodologie de recherche"
+  },
+  "analysis": {
+    "title": "Analyse et Évaluation"
+  },
+  "process": {
+    "title": "Processus de Recherche",
+    "subtitle": "Comment nous travaillons"
+  },
+  "process_steps": {
+    "step1": {
+      "title": "Identification du problème",
+      "description": "Analyse des défis et identification des problématiques de recherche"
+    },
+    "step2": {
+      "title": "Revue de littérature",
+      "description": "Étude approfondie de l'état de l'art et des travaux existants"
+    },
+    "step3": {
+      "title": "Conception de la solution",
+      "description": "Développement d'approches innovantes et de méthodologies adaptées"
+    },
+    "step4": {
+      "title": "Implémentation et tests",
+      "description": "Réalisation pratique et validation expérimentale des solutions"
+    },
+    "step5": {
+      "title": "Publication et diffusion",
+      "description": "Partage des résultats et contribution à la communauté scientifique"
+    }
+  },
   "buttons": {
     "view_projects": "Voir nos Projets",
     "view_publications": "Nos Publications"

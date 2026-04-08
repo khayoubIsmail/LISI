@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom"
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { ChevronDown, Mail, ExternalLink, Search, Users } from "lucide-react"
-import LoadingSkeleton from '@/components/common/LoadingSkeleton';
 import { Input } from "@/components/ui/input"
 import { membresApi } from '@/services/api';
 import { buildImageUrl } from '@/utils/imageUtils';
@@ -163,7 +162,9 @@ const Membres: React.FC = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <LoadingSkeleton type="grid" rows={1} />
+        <div className="text-center">
+          <div className="text-lg text-gray-600">Chargement...</div>
+        </div>
       </div>
     );
   }

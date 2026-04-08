@@ -271,11 +271,11 @@ const Header: React.FC = () => {
   );
 
   return (
-    <header className={`bg-white shadow-lg sticky top-0 z-50 transition-transform duration-300 header-scroll-animation header-parallax ${
+    <header className={`glass sticky top-0 z-50 transition-all duration-300 ${
       isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
     }`}>
       <TopBar />
-      
+
       <div className="max-w-7xl mx-auto px-4 px-4 sm:px-6 lg:px-8">
       <div className="flex justify-between items-center py-2 ">
           <Logo currentLanguage={currentLanguage} getLogoConfig={getLogoConfig} onError={handleLogoError} />
@@ -283,7 +283,7 @@ const Header: React.FC = () => {
           <LoginButton />
           <MobileMenuButton />
         </div>
-        
+
         <MobileNavigation />
       </div>
     </header>

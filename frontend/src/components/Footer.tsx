@@ -44,8 +44,9 @@ const Footer = () => {
     };
 
   return (
-    <footer className="bg-[#437a49] border-t text-white pt-8 pb-6">
-      <div className="container mx-auto px-6">
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white pt-16 pb-8 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-purple-900/20"></div>
+      <div className="relative container mx-auto px-6">
         {/* Haut du footer : logo + navigation */}
         <div className="flex flex-col lg:flex-row items-start justify-between mb-12 gap-6 lg:gap-12">
   <div className="w-full max-w-sm lg:max-w-xs shrink-0">

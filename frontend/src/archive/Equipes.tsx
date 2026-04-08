@@ -6,7 +6,6 @@ import Footer from '../components/Footer';
 import MembreCard from './MembreCard';
 import { Users } from "lucide-react"
 import TabNavigation from '@/components/common/TabNavigation';
-import LoadingSkeleton from '@/components/common/LoadingSkeleton';
 import { axesApi } from '../services/api';
 
 // Lazy load du composant MembreCard pour optimiser le chargement
@@ -105,7 +104,7 @@ const Equipe: React.FC = () => {
 
             {axe.membres.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <Suspense fallback={<LoadingSkeleton type="grid" rows={4} />}>
+                <Suspense fallback={<div className="text-center py-4"><div className="text-sm text-gray-600">Chargement...</div></div>}>
                   {axe.membres.map((membre) => (
                     <LazyMembreCard
                       key={membre.id}

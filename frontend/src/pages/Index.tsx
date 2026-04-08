@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Link } from 'react-router-dom';
-import LoadingSkeleton from '@/components/common/LoadingSkeleton';
 import IconMapper from '@/components/common/IconMapper.tsx'
 import { getIconComponent, ICONS } from '@/utils/iconUtils';
 import { useIndexSettingsAPI } from '@/hooks/useIndexSettingsAPI';
@@ -167,10 +166,12 @@ const Index = () => {
   // Affichage de l'état de chargement
   if (loading) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen">
         <Header />
         <div className="flex items-center justify-center min-h-[60vh]">
-          <LoadingSkeleton type="grid" rows={3} />
+          <div className="text-center">
+            <div className="text-lg text-gray-600">Chargement...</div>
+          </div>
         </div>
         <Footer />
       </div>
@@ -180,7 +181,7 @@ const Index = () => {
   // Affichage de l'erreur
   if (error) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen">
         <Header />
         <div className="flex items-center justify-center min-h-[60vh]">
           <div className="text-center max-w-lg mx-auto p-8">
@@ -210,26 +211,28 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-primary/5 via-background to-accent/10 py-24 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <section className="relative py-32 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800"></div>
+          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="animate-fade-in">
+              <div className="animate-fade-in text-white">
                   {(() => {
                     const titreLigne1 = getContent('hero_titre_principal1', 'hero_titre_principal1');
                     const titreLigne2 = getContent('hero_titre_principal2', 'hero_titre_principal2');
                     const sousTitre = getContent('hero_sous_titre', 'hero_sous_titre');
-                  
+
                   return (
                     <>
-                      <h1 className="text-4xl font-bold text-gray-900 mb-6">
+                      <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                       <span className="block">{titreLigne1}</span>
-                      <span className="block">{titreLigne2}</span>
+                      <span className="block gradient-text">{titreLigne2}</span>
                       </h1>
-                      <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                      <p className="text-xl text-gray-200 mb-8 leading-relaxed max-w-lg">
                         {sousTitre}
                       </p>
                     </>
@@ -237,14 +240,14 @@ const Index = () => {
                 })()}
                 <div className="flex flex-col sm:flex-row gap-4 mb-16">
                 <Link
-  to="/index#mission" 
-  className={`bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center group ${i18n.language === 'ar' ? 'flex-row-reverse' : ''}`}
+  to="/index#mission"
+  className="glass text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300 flex items-center justify-center group shadow-lg hover:shadow-xl"
   dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
 >
   {t('decouvrir_mission')}
-  <IconMapper 
-    iconKey="ArrowRight" 
-    className={`${i18n.language === 'ar' ? 'mr-2' : 'ml-2'} h-4 w-4 group-hover:translate-x-1 transition-transform`} 
+  <IconMapper
+    iconKey="ArrowRight"
+    className={`${i18n.language === 'ar' ? 'mr-3' : 'ml-3'} h-5 w-5 group-hover:translate-x-1 transition-transform`}
   />
 </Link>
 

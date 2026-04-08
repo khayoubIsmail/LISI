@@ -30,8 +30,8 @@ const Recherche= () => {
 
    // Fonction utilitaire pour récupérer le contenu dans la langue actuelle
    const getContent = (baseKey: string, fallbackKey: string): string => {
-    const result = getMultilingualContent(settings, baseKey, i18n.language, fallbackKey) || t(fallbackKey);
-    return result;
+    const result = getMultilingualContent(settings, baseKey, i18n.language, fallbackKey);
+    return result !== null ? result : t(fallbackKey);
   };
 
   // Optimisation avec useCallback pour le chargement des données

@@ -10,7 +10,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Edit, Trash2, CheckCircle2, X, Users, Search, UserPlus, Eye, Mail, User } from "lucide-react"
 import NotificationBanner from "@/components/common/NotificationBanner"
-import LoadingSkeleton from "@/components/common/LoadingSkeleton"
 import SearchInput from "@/components/common/SearchInput"
 import UserAvatar from "@/components/common/UserAvatar"
 import DashboardPageLayout from "@/components/layout/DashboardPageLayout"
@@ -383,7 +382,9 @@ export default function MembresParAxePage() {
 
           {/* Tableau des membres */}
           {loading ? (
-            <LoadingSkeleton type="table" rows={5} columns={4} />
+            <div className="text-center py-8">
+              <div className="text-lg text-gray-600">Chargement...</div>
+            </div>
           ) : searchFilteredMembres.length === 0 ? (
             <Card>
               <CardContent className="text-center py-8">

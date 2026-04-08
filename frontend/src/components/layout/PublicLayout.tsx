@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import LoadingSkeleton from '@/components/common/LoadingSkeleton';
 import { useTranslation } from 'react-i18next';
 import { useRTL } from '@/hooks/useRTL';
 
@@ -39,7 +38,9 @@ const PublicLayout: React.FC<PublicLayoutProps> = ({
       <div className="min-h-screen bg-background">
         <Header />
         <div className="flex items-center justify-center min-h-[60vh]">
-          <LoadingSkeleton type="grid" rows={3} />
+          <div className="text-center">
+            <div className="text-lg text-gray-600">Chargement...</div>
+          </div>
         </div>
         <Footer />
       </div>

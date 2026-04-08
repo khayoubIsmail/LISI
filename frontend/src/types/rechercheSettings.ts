@@ -159,7 +159,7 @@ export const getMultilingualContent = (
   baseKey: string, 
   currentLanguage: string,
   fallbackKey?: string
-): string => {
+): string | null => {
   const languageKey = currentLanguage as 'fr' | 'ar' | 'en';
   const multilingualKey = `${baseKey}_${languageKey}`;
   
@@ -174,12 +174,8 @@ export const getMultilingualContent = (
     return settings[baseKey] as string;
   }
   
-  // Fallback vers la clé de traduction si rien n'est trouvé
-  if (fallbackKey) {
-    return fallbackKey;
-  }
-  
-  return '';
+  // Retourner null si aucun contenu trouvé - la logique de fallback sera gérée ailleurs
+  return null;
 };
 
 // Fonction utilitaire pour fusionner les données API avec les valeurs par défaut

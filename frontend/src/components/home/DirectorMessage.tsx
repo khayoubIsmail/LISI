@@ -50,31 +50,32 @@ const DirectorMessage = () => {
   };
 
   return (
-    <section className="py-16 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-50/50 to-purple-50/50"></div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Photo du directeur */}
           <div className="relative">
-            <div className="relative">
+            <div className="glass rounded-2xl p-8 animate-float">
                <img 
                     src={buildImageUrlWithDefaults(settings.mot_directeur_image)}
                     alt={t('mot_directeur_image')}
-                    className="w-56 h-56 rounded-full mx-auto mb-6 object-cover shadow-lg"
+                    className="w-48 h-48 rounded-full mx-auto object-cover shadow-xl"
                   />
             </div>
           </div>
 
           {/* Message du directeur */}
-          <div>
-            <div className="mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="glass rounded-2xl p-8">
+            <div className="mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">
                 {getContent('mot_directeur_titre', 'mot_directeur_titre')}
               </h2>
-              <div className="w-20 h-1 bg-green-600 mb-6"></div>
+              <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mb-6 rounded-full"></div>
             </div>
 
-            <blockquote className="text-lg text-gray-700 leading-relaxed mb-8">
-              {getContent('mot_directeur_description', 'mot_directeur_description')}
+            <blockquote className="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+              "{getContent('mot_directeur_description', 'mot_directeur_description')}"
             </blockquote>
 
             <div

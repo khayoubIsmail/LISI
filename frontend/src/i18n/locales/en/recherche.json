@@ -1,5 +1,39 @@
 {
-
+  "titre": "Our Research Areas",
+  "texte_intro": "Discover our areas of expertise and strategic research axes at the Laboratory of Computer Science and Intelligent Systems.",
+  "strategic": {
+    "title": "Strategic Approach",
+    "subtitle": "Our research methodology"
+  },
+  "analysis": {
+    "title": "Analysis and Evaluation"
+  },
+  "process": {
+    "title": "Research Process",
+    "subtitle": "How we work"
+  },
+  "process_steps": {
+    "step1": {
+      "title": "Problem Identification",
+      "description": "Analysis of challenges and identification of research issues"
+    },
+    "step2": {
+      "title": "Literature Review",
+      "description": "In-depth study of the state of the art and existing work"
+    },
+    "step3": {
+      "title": "Solution Design",
+      "description": "Development of innovative approaches and adapted methodologies"
+    },
+    "step4": {
+      "title": "Implementation and Testing",
+      "description": "Practical implementation and experimental validation of solutions"
+    },
+    "step5": {
+      "title": "Publication and Dissemination",
+      "description": "Sharing results and contributing to the scientific community"
+    }
+  },
   "buttons": {
     "view_projects": "View our Projects",
     "view_publications": "Our Publications"

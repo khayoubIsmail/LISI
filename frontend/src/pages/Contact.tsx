@@ -9,7 +9,6 @@ import { contactAPI, ContactFormData } from "@/services/api";
 import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import LoadingSkeleton from "@/components/common/LoadingSkeleton";
 import { buildImageUrl } from '@/utils/imageUtils';
 import { useTranslation } from 'react-i18next';
 import { ContactSettings, getMultilingualContent, DEFAULT_CONTACT_SETTINGS } from '@/types/contactSettings';
@@ -96,7 +95,9 @@ useEffect(() => {
       <div className="min-h-screen bg-white">
         <Header />
         <div className="flex items-center justify-center min-h-[60vh]">
-          <LoadingSkeleton type="grid" rows={3} />
+          <div className="text-center">
+            <div className="text-lg text-gray-600">Chargement...</div>
+          </div>
         </div>
         <Footer />
       </div>

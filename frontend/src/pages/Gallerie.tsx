@@ -7,7 +7,6 @@ import { toast } from '@/hooks/use-toast';
 import { useGalerieSettings } from '@/hooks/useGalerieSettings';
 import { useTranslation } from 'react-i18next';
 import { buildImageUrl, buildImageUrlWithDefaults } from '@/utils/imageUtils';
-import LoadingSkeleton from '@/components/common/LoadingSkeleton';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -191,7 +190,9 @@ const Gallery = () => {
       <div className="min-h-screen bg-white">
         <Header />
         <div className="flex items-center justify-center min-h-[50vh]">
-          <LoadingSkeleton type="grid" rows={1} />
+          <div className="text-center">
+            <div className="text-lg text-gray-600">Chargement...</div>
+          </div>
         </div>
         <Footer />
       </div>
@@ -303,7 +304,9 @@ const Gallery = () => {
             )}
             {loadingMore && (
               <div className="col-span-1 md:col-span-2 lg:col-span-3 text-center py-8">
-                <LoadingSkeleton type="grid" rows={1} />
+                <div className="text-center">
+                  <div className="text-lg text-gray-600">Chargement...</div>
+                </div>
               </div>
             )}
           </div>

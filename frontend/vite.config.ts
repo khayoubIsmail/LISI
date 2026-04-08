@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   server: {
-    host: true, // équivalent à "::" ou "0.0.0.0", utile pour LAN
+    host: 'localhost', // Use localhost to match backend domain for cookies
     port: 5173,
     strictPort: true,
     proxy: {

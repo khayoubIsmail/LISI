@@ -62,8 +62,8 @@ Route::get('auth/google/callback', [SocialAuthController::class, 'handleGoogleCa
 Route::get('/sanctum/csrf-cookie', fn () => response()->json(['message' => 'CSRF cookie set']));
 
 // Requête OPTIONS (preflight CORS)
-Route::options('{any}', fn () => response('', 200)
-    ->header('Access-Control-Allow-Origin', 'http://localhost:5173')
+Route::options('{any}', fn (Request $request) => response('', 200)
+    ->header('Access-Control-Allow-Origin', $request->header('Origin') ?: 'http://localhost:5173')
     ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
     ->header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, X-CSRF-TOKEN, X-XSRF-TOKEN')
     ->header('Access-Control-Allow-Credentials', 'true')

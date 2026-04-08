@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import LoadingSkeleton from '../components/common/LoadingSkeleton';
 import PageContent from '../components/common/PageContent';
 import { useActivityReports } from '../hooks/useActivityReports';
 import { useActivityReportsSettings } from '../hooks/useActivityReportsSettings';
@@ -46,7 +45,9 @@ const ActivityReports: React.FC = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <LoadingSkeleton type="grid" rows={1} />
+        <div className="text-center">
+          <div className="text-lg text-gray-600">Chargement...</div>
+        </div>
       </div>
     );
   }

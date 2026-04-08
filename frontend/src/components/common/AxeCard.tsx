@@ -61,20 +61,25 @@ const AxeCard: React.FC<AxeCardProps> = ({
   //  Variante "compacte"
   if (variant === 'compact') {
     return (
-      <div 
-        className={`group bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border cursor-pointer ${className}`}
+      <div
+        className={`group glass hover-lift rounded-2xl p-6 cursor-pointer animate-fade-in ${className}`}
         onClick={handleClick}
       >
         <div className={`flex items-start ${isArabic ? 'space-x-reverse space-x-4' : 'space-x-4'}`}>
           <div className="flex-shrink-0">
-            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-              <Icon className="w-6 h-6 text-primary group-hover:text-primary-foreground" />
+            <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <Icon className="w-7 h-7 text-white" />
             </div>
           </div>
           <div className="flex-1">
-            <h3 className="font-bold text-foreground mb-2 leading-tight">
+            <h3 className="font-bold text-gray-800 mb-2 leading-tight text-lg">
               {title}
             </h3>
+            {problematique && (
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {problematique.length > 100 ? `${problematique.substring(0, 100)}...` : problematique}
+              </p>
+            )}
           </div>
         </div>
       </div>
